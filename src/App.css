@@ -1,0 +1,22 @@
+.PageHead{
+    padding:32px
+}
+.PageMain{
+    padding:32px
+}
+
+p1{
+    color: darkseagreen;
+    padding: 20px
+}
+p2{
+    color: cadetblue;
+    padding: 20px
+}
+p3{
+     color: orange;
+    padding: 20px
+ }
+img{
+    width: 10px;
+}
