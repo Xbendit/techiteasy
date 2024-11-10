@@ -39,20 +39,19 @@ function App() {
                     </article>
                 </div>
                 <h2>Best verkochte tv</h2>
+                <div className={"devider2"}>
                 <article className={"BestTV"}>
                     <img src="https://image.coolblue.nl/max/500x500/products/1786196" alt="Tv" className={"Bestetv"}/>
                     <br/>
-                    <nav className={"gegevens"}>
+                    <div className={"gegevens"}>
                         <p4>{ProductName(bestSellingTv)}</p4>
-                        <br/>
                         <p5>{ProductPrice(bestSellingTv)}</p5>
-                        <br/>
                         <p6>{Productsize(bestSellingTv)}</p6>
-                        <br/>
                         <p7> wifi <img src={checks}/> speech <img src={minuss}/> hdr <img src={checks}/> bluethooth <img
                             src={checks}/> ambilight <img src={minuss}/></p7>
-                    </nav>
+                    </div>
                 </article>
+                </div>
             </main>
         </div>
     )
