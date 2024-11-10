@@ -113,11 +113,18 @@ img {
 
 p4 {
     font-size: 20px;
+    /*margin: 0 0 30px 0;*/
 }
 
 p5 {
     font-size: 30px;
-    margin: 10px 0;
+    margin: 20px 0;
+}
+p6 {
+    margin: 5px 0;
+}
+p7 {
+    margin: 5px 0;
 }
 
 @media screen and (max-width:576px){
