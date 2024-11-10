@@ -16,22 +16,42 @@ function App() {
             <header className="PageHead">
                 <h1>Tech it easy dashboard</h1>
             </header>
-            <main className="PageMain">
+            <main className={"PageMain"}>
                 <h2>Verkoop overzicht</h2>
-                <p1>Aantal producten {soldTvs(inventory)}</p1>
-                <p2>Aantal ingekochte producten {purchasedTvs(inventory)}</p2>
-                <p3>Aantal te verkopen producten {TvsToSell(inventory)}</p3>
-                <article>
-                    <img src="https://image.coolblue.nl/max/500x500/products/1786196" alt="Tv"/>
-                <br/>
-                <p4>Product naam: {ProductName(bestSellingTv)}</p4>
-                <br/>
-                <p5>Product prijs: {ProductPrice(bestSellingTv)}</p5>
-                <br/>
-                <p6>Product Formaat: {Productsize(bestSellingTv)}</p6>
+                <div className={"devider"}>
+                    <article className={"productdash1"}>
+                        <nav className={"nav1"}>
+                            <h3>Aantal verkochte producten</h3>
+                            <p1>{soldTvs(inventory)}</p1>
+                        </nav>
+                    </article>
+                    <article className={"productdash2"}>
+                        <nav className={"nav2"}>
+                            <h3>Aantal ingekochte producten</h3>
+                            <p1>{purchasedTvs(inventory)}</p1>
+                        </nav>
+                    </article>
+                    <article className={"productdash3"}>
+                        <nav className={"nav3"}>
+                            <h3>Aantal te verkopen producten</h3>
+                            <p1> {TvsToSell(inventory)}</p1>
+                        </nav>
+                    </article>
+                </div>
+                <h2>Best verkochte tv</h2>
+                <div className={"devider2"}>
+                <article className={"BestTV"}>
+                    <img src="https://image.coolblue.nl/max/500x500/products/1786196" alt="Tv" className={"Bestetv"}/>
                     <br/>
-                    <p7> wifi <img src={checks}/> speech <img src={minuss}/> hdr <img src={checks}/> bluethooth <img src={checks}/> ambilight <img src={minuss}/> </p7>
+                    <div className={"gegevens"}>
+                        <p4>{ProductName(bestSellingTv)}</p4>
+                        <p5>{ProductPrice(bestSellingTv)}</p5>
+                        <p6>{Productsize(bestSellingTv)}</p6>
+                        <p7> wifi <img src={checks}/> speech <img src={minuss}/> hdr <img src={checks}/> bluethooth <img
+                            src={checks}/> ambilight <img src={minuss}/></p7>
+                    </div>
                 </article>
+                </div>
             </main>
         </div>
     )
