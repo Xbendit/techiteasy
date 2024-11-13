@@ -6,7 +6,7 @@
     padding: 0 0 0 32px;
 }
 
-p1 {
+.soltv {
     font-size: 25px;
 }
 
@@ -125,6 +125,28 @@ p6 {
 }
 p7 {
     margin: 5px 0;
+}
+button{
+    margin: 0 5px;
+}
+.AlltvsImg{
+    width: 200px;
+    height: auto;
+}
+ul{
+    list-style: none;
+}
+.tvlist {
+    display: flex;
+    flex-direction: column;
+}
+.gegevens2{
+    display: flex;
+    flex-direction: row;
+}
+.gegevens3{
+    display: flex;
+    flex-direction: column;
 }
 
 @media screen and (max-width:576px){

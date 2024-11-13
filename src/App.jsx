@@ -4,10 +4,14 @@ import {bestSellingTv, inventory} from "./constants/inventory.js";
 import purchasedTvs from "./helpers/IngekochteTVs.js";
 import TvsToSell from "./helpers/TeVerkopenTVs.js";
 import ProductName from "./helpers/ProductNaam.js";
+import ProductName2 from "./helpers/ProductNaam.js";
 import ProductPrice from "./helpers/ProductPrijs.js";
+import ProductPrice2 from "./helpers/ProductPrijs.js";
 import Productsize from "./helpers/ProductFormaat.js";
+import Productsize2 from "./helpers/ProductFormaat.js";
 import minuss from './assets/minus.png';
 import checks from './assets/check.png';
+import './constants/oefening.js';
 
 
 function App() {
@@ -22,7 +26,7 @@ function App() {
                     <article className={"productdash1"}>
                         <nav className={"nav1"}>
                             <h3>Aantal verkochte producten</h3>
-                            <p1>{soldTvs(inventory)}</p1>
+                            <p1 className={"soltv"}>{soldTvs(inventory)}</p1>
                         </nav>
                     </article>
                     <article className={"productdash2"}>
@@ -52,6 +56,39 @@ function App() {
                     </div>
                 </article>
                 </div>
+                <article>
+                    <h2>Alle tvs</h2>
+                    <button className={"MostSoldFirst"} type="button">Meest verkochte eerst</button>
+                    <button className={"CheapestFirst"} type="button">Goedkoopste eerst</button>
+                    <button className={"BestforSports"} type="button">Meest geschikte voor sport eerst</button>
+                    <div className={"tvlist"}>
+                    <ul>
+                        {inventory.map((alltvs)=> {
+                            /*console.log(alltvs)*/
+                         return (
+                             <li key={alltvs.type}>
+                                 <div className={"gegevens2"}>
+                                     <img src={(alltvs.sourceImg)} alt="Tvs" className={"AlltvsImg"}/>
+                                     <div className={"gegevens3"}>
+                                         <p>{ProductName2(alltvs)}</p>
+                                         <p>{ProductPrice2(alltvs)}</p>
+                                         <p>{Productsize2(alltvs)}</p>
+                                         {alltvs.options.map((alloptions)=> {
+                                             console.log(alloptions)
+                                             if (alloptions.applicable === true){
+                                                 return alloptions.name + <img src={checks}/>
+                                             }else{
+                                                 return alloptions.name + <img src={minuss}/>
+                                             }
+                                         })}
+                                     </div>
+                                 </div>
+                             </li>
+                         )
+                             })}
+                    </ul>
+                    </div>
+                </article>
             </main>
         </div>
     )
