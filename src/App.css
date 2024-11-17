@@ -1,22 +1,181 @@
-.PageHead{
-    padding:32px
-}
-.PageMain{
-    padding:32px
+.PageHead {
+    padding: 5px 0 0 32px;
 }
 
-p1{
-    color: darkseagreen;
-    padding: 20px
+.PageMain {
+    padding: 0 0 0 32px;
 }
-p2{
-    color: cadetblue;
-    padding: 20px
+
+.soltv {
+    font-size: 25px;
 }
-p3{
-     color: orange;
-    padding: 20px
- }
-img{
+
+h3 {
+    margin: 25px 0;
+}
+
+.nav1 {
+    color: #45a99c;
+    padding: 20px;
+}
+
+.nav2 {
+    color: #4e879d;
+    padding: 20px;
+}
+
+.nav3 {
+    color: #e56141;
+    padding: 20px;
+}
+
+img {
+    width: 200px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 100px;
+}
+
+.devider {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 830px;
+}
+
+
+.productdash1 {
+    text-align: center;
+    width: 250px;
+    height: 200px;
+
+    border: 2px solid #45a99c;
+    background-color: #effcf8;
+    border-radius: 15px;
+}
+
+.productdash2 {
+    text-align: center;
+    width: 250px;
+    height: 200px;
+
+    border: 2px solid #4e879d;
+    background-color: #f0f5f8;
+    border-radius: 15px;
+}
+
+.productdash3 {
+    text-align: center;
+    width: 250px;
+    height: 200px;
+
+    border: 2px solid #e56141;
+    background-color: #fcefeb;
+    border-radius: 15px;
+}
+
+.devider2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.BestTV {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: 2px dotted #adadae;
+    background-color: #ececec;
+    border-radius: 15px;
+    width: 830px;
+}
+
+.gegevens {
+    display: flex;
+    flex-direction: column;
+    margin: 50px;
+}
+
+.Bestetv {
+    height: 150px;
+    width: auto;
+}
+
+img {
+    height: 10px;
     width: 10px;
+}
+
+p4 {
+    font-size: 20px;
+}
+
+p5 {
+    font-size: 30px;
+    margin: 20px 0;
+}
+p6 {
+    margin: 5px 0;
+}
+p7 {
+    margin: 5px 0;
+}
+button{
+    margin: 0 5px;
+}
+.AlltvsImg{
+    width: auto;
+    height: 150px;
+}
+ul{
+    list-style: none;
+}
+.tvlist {
+    display: flex;
+    flex-direction: column;
+}
+.gegevens2{
+    display: flex;
+    flex-direction: row;
+}
+.gegevens3{
+    display: flex;
+    flex-direction: column;
+}
+
+.lijstafb{
+    display: flex;
+    gap: 10px;
+    justify-content: flex-start;
+    padding: 0;
+}
+
+@media screen and (max-width:576px){
+    .devider {
+        flex-direction: column;
+    }
+    .productdash1{
+        margin: 20px 0;
+    }
+    .productdash2{
+        margin: 20px 0;
+    }
+    .productdash3{
+        margin: 20px 0;
+    }
+    .BestTV {
+        flex-direction: column;
+        max-width: 254px;
+    }
+    .Bestetv {
+        margin:20px 0;
+    }
+    .devider2 {
+        justify-content: flex-start;
+    }
 }
