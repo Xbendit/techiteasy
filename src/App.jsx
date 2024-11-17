@@ -15,6 +15,28 @@ import './constants/oefening.js';
 
 
 function App() {
+
+    function sortgoedkoopste() {
+        inventory.sort((tv1, tv2) => {
+            return tv1.price - tv2.price;
+        });
+        console.log(inventory)
+    }
+
+    function sortmeesteverkocht() {
+        inventory.sort((tv1, tv2) => {
+            return tv2.sold - tv1.sold;
+        });
+        console.log(inventory)
+    }
+
+    function bestesporttv() {
+        inventory.sort((tv1, tv2) => {
+            return tv2.refreshRate - tv1.refreshRate;
+        });
+        console.log(inventory)
+    }
+
     return (
         <div>
             <header className="PageHead">
@@ -44,49 +66,62 @@ function App() {
                 </div>
                 <h2>Best verkochte tv</h2>
                 <div className={"devider2"}>
-                <article className={"BestTV"}>
-                    <img src="https://image.coolblue.nl/max/500x500/products/1786196" alt="Tv" className={"Bestetv"}/>
-                    <br/>
-                    <div className={"gegevens"}>
-                        <p4>{ProductName(bestSellingTv)}</p4>
-                        <p5>{ProductPrice(bestSellingTv)}</p5>
-                        <p6>{Productsize(bestSellingTv)}</p6>
-                        <p7> wifi <img src={checks}/> speech <img src={minuss}/> hdr <img src={checks}/> bluethooth <img
-                            src={checks}/> ambilight <img src={minuss}/></p7>
-                    </div>
-                </article>
+                    <article className={"BestTV"}>
+                        <img src="https://image.coolblue.nl/max/500x500/products/1786196" alt="Tv"
+                             className={"Bestetv"}/>
+                        <br/>
+                        <div className={"gegevens"}>
+                            <p4>{ProductName(bestSellingTv)}</p4>
+                            <p5>{ProductPrice(bestSellingTv)}</p5>
+                            <p6>{Productsize(bestSellingTv)}</p6>
+                            <p7> wifi <img src={checks}/> speech <img src={minuss}/> hdr <img
+                                src={checks}/> bluethooth <img
+                                src={checks}/> ambilight <img src={minuss}/></p7>
+                        </div>
+                    </article>
                 </div>
                 <article>
                     <h2>Alle tvs</h2>
-                    <button className={"MostSoldFirst"} type="button">Meest verkochte eerst</button>
-                    <button className={"CheapestFirst"} type="button">Goedkoopste eerst</button>
-                    <button className={"BestforSports"} type="button">Meest geschikte voor sport eerst</button>
+                    <button className={"MostSoldFirst"} type="button" onClick={sortmeesteverkocht}>Meest verkochte
+                        eerst
+                    </button>
+                    <button className={"CheapestFirst"} type="button" onClick={sortgoedkoopste}>Goedkoopste eerst
+                    </button>
+                    <button className={"BestforSports"} type="button" onClick={bestesporttv}>Meest geschikte voor sport
+                        eerst
+                    </button>
                     <div className={"tvlist"}>
-                    <ul>
-                        {inventory.map((alltvs)=> {
-                            /*console.log(alltvs)*/
-                         return (
-                             <li key={alltvs.type}>
-                                 <div className={"gegevens2"}>
-                                     <img src={(alltvs.sourceImg)} alt="Tvs" className={"AlltvsImg"}/>
-                                     <div className={"gegevens3"}>
-                                         <p>{ProductName2(alltvs)}</p>
-                                         <p>{ProductPrice2(alltvs)}</p>
-                                         <p>{Productsize2(alltvs)}</p>
-                                         {alltvs.options.map((alloptions)=> {
-                                             console.log(alloptions)
-                                             if (alloptions.applicable === true){
-                                                 return alloptions.name + <img src={checks}/>
-                                             }else{
-                                                 return alloptions.name + <img src={minuss}/>
-                                             }
-                                         })}
-                                     </div>
-                                 </div>
-                             </li>
-                         )
-                             })}
-                    </ul>
+                        <ul>
+                            {inventory.map((alltvs) => {
+                                /*console.log(alltvs)*/
+                                return (
+                                    <li key={alltvs.type}>
+                                        <div className={"gegevens2"}>
+                                            <img src={(alltvs.sourceImg)} alt="Tvs" className={"AlltvsImg"}/>
+                                            <div className={"gegevens3"}>
+                                                <p>{ProductName2(alltvs)}</p>
+                                                <p>{ProductPrice2(alltvs)}</p>
+                                                <p>{Productsize2(alltvs)}</p>
+                                                <ul className={"lijstafb"}>
+                                                    {alltvs.options.map((alloptions) => {
+                                                        /*console.log(alloptions)*/
+                                                        if (alloptions.applicable === true) {
+                                                            return <li key={alltvs.type}> {alloptions.name} <img
+                                                                src={checks}/>
+                                                            </li>
+                                                        } else {
+                                                            return <li key={alltvs.type}> {alloptions.name} <img
+                                                                src={minuss}/>
+                                                            </li>
+                                                        }
+                                                    })}
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+                                )
+                            })}
+                        </ul>
                     </div>
                 </article>
             </main>
